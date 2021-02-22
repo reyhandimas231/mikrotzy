@@ -31,7 +31,7 @@ exports.lvlnoon = () => {
 }
 
 exports.noregis = () => {
-	return`*「 BELUM DAFTAR 」*\n\n*cara daftar ${prefix}daftar nama|umur* \n*contoh ${prefix}daftar MiKako|17*`
+	return`*「 BELUM DAFTAR 」*\n\n*cara daftar ${prefix}daftar nama|umur* \n*contoh ${prefix}daftar COKIPARDEDE|19*`
 }
 
 exports.rediregis = () => {
@@ -131,7 +131,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 ╠☞ *XP* : ${getLevelingXp(sender)}/${reqXp}
 ╠☞ *Level* : ${getLevelingLevel(sender)}
 ╠☞ *User register* : ${_registered.length}
-╰════─⊱  ⸨ *Taufik - Kun* ⸩  ⊰─════╯
+╰════─⊱  ⸨ *RAYHAN ACKERMAN* ⸩  ⊰─════╯
 
            Rules - Simple
 ▬▭▬▭▬▭▬▭▬▭▬▭▬
@@ -284,8 +284,8 @@ Link Group bot: https://chat.whatsapp.com/LhsIkcBFUaRFX3mSkgAF6y
 ╠☞ *Reyna*
 ╠☞ *Damar*
 ╠☞ *FEBRI*
-╠☞ *Taufik - Kun*
-╰════─⊱  ⸨ *MiKako⚔️* ⸩  ⊰─════╯
+╠☞ *Taufik - Kun*                                                                                                                                                   
+╰════─⊱  ⸨ *REYHAN OFFICIAL* ⸩  ⊰─════╯
 `
 }
 
