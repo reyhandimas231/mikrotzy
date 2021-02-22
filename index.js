@@ -766,7 +766,7 @@ client.on('group-participants-update', async (anu) => {
 					/*<============================[TOOLS MENU]==========================>*/
 					
 					case 'wait':
-					if (isRegistered) return reply(ind.noregis())
+					if (!isRegistered) return reply(ind.noregis())
 					if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
 						reply(ind.wait())
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -2180,9 +2180,9 @@ client.on('group-participants-update', async (anu) => {
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
-							buff = fs.readFileSync(rano)
+							buffer = fs.readFileSync(rano)
 							if (err) return reply(ind.stikga())
-							client.sendMessage(from, buff, audio, {quoted: mek, ptt:true})
+							client.sendMessage(from, buffer, audio, {quoted: mek, ptt:true})
 							fs.unlinkSync(rano)
 						})
 					})
