@@ -146,7 +146,7 @@ exports.menu = (pushname, prefix, getLevelingLevel, getLevelingXp, sender, reqXp
 *${prefix}donasi*
 *${prefix}owner*
 *${prefix}ingfo*
-Link Group bot: https://chat.whatsapp.com/LhsIkcBFUaRFX3mSkgAF6y
+Link Group bot:https://chat.whatsapp.com/DQx2UcGWJ1MAYTB4dZeZgk
 
 ╭══─⊱ ❰ *MAKER MENU* ❱ ⊰─══➤
 ╠☞ *${prefix}sticker* (jika video max. 9det)
@@ -284,7 +284,7 @@ Link Group bot: https://chat.whatsapp.com/LhsIkcBFUaRFX3mSkgAF6y
 ╠☞ *Reyna*
 ╠☞ *Damar*
 ╠☞ *FEBRI*
-╠☞ *Taufik - Kun*                                                                                                                                                   
+╠☞ *RAYHAN*                                                                                                                                                   
 ╰════─⊱  ⸨ *REYHAN OFFICIAL* ⸩  ⊰─════╯
 `
 }
