@@ -57,7 +57,7 @@ limitawal = '100' //terserah ganti/gk
 cr = '*Jangan digunakan Via PC co*'
 
 /******** OWNER NUMBER**********/
-const ownerNumber = ["6289675651966@s.whatsapp.net","6281216087060@s.whatsapp.net"]  //ganti menjadi nomormu
+const ownerNumber = ["681216087060@s.whatsapp.net","6281216087060@s.whatsapp.net"]  //ganti menjadi nomormu
 /************************************/
 
        
