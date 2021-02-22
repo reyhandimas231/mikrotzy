@@ -1,8 +1,8 @@
 /*<=====[CommandDetected]=====>*/
 /*<=====[loadSyncError507]====>*/
 /*<=====[FileSyncodeError]====>*/
-/*<=====[GetCodeTaufik-Kun]===>*/
-/*<=====[UserID[MiKako]✓]=====>*/
+/*<=====[GetCodeRAYHAN-Kun]===>*/
+/*<=====[UserID[PAREDEDE]✓]=====>*/
 /*<=====[StartProject✓]=====>*/
 
 const {
@@ -47,9 +47,9 @@ const BarBarKey = 'IDxO1TFYnKADlX4pxcHa'
 const TobzKey = 'BotWeA'
 const vcard = 'BEGIN:VCARD\n'  // Jangan di ubah biar ga error
             + 'VERSION:3.0\n'  // Jangan di ubah biar ga error
-            + 'FN:MiKako\n'  // Ganti jadi namamu
-            + 'ORG: Pengembang Taufik-Kun;\n'  // Ganti jadi namamu/Botmu
-            + 'TEL;type=CELL;type=VOICE;waid=6289675651966:+62 896-7565-1966\n'  // Ganti jadi nomormu, tapi jangan ubah polanya
+            + 'FN:REYHAN OFFICIAL\n'  // Ganti jadi namamu
+            + 'ORG: Pengembang REYHAN ACKERMAN;\n'  // Ganti jadi namamu/Botmu
+            + 'TEL;type=CELL;type=VOICE;waid=6289675651966:+62 812-1608-7060\n'  // Ganti jadi nomormu, tapi jangan ubah polanya
             + 'END:VCARD' // jangan di ubah
 prefix = '#'
 blocked = []   
@@ -57,7 +57,7 @@ limitawal = '100' //terserah ganti/gk
 cr = '*Jangan digunakan Via PC co*'
 
 /******** OWNER NUMBER**********/
-const ownerNumber = ["6289675651966@s.whatsapp.net","6285807479634@s.whatsapp.net"]  //ganti menjadi nomormu
+const ownerNumber = ["6289675651966@s.whatsapp.net","6281216087060@s.whatsapp.net"]  //ganti menjadi nomormu
 /************************************/
 
        
