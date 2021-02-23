@@ -49,7 +49,7 @@ const vcard = 'BEGIN:VCARD\n'  // Jangan di ubah biar ga error
             + 'VERSION:3.0\n'  // Jangan di ubah biar ga error
             + 'FN:REYHAN OFFICIAL\n'  // Ganti jadi namamu
             + 'ORG: Pengembang REYHAN ACKERMAN;\n'  // Ganti jadi namamu/Botmu
-            + 'TEL;type=CELL;type=VOICE;waid=6289675651966:+62 812-1608-7060\n'  // Ganti jadi nomormu, tapi jangan ubah polanya
+            + 'TEL;type=CELL;type=VOICE;waid=6281216087060:+62 812-1608-7060\n'  // Ganti jadi nomormu, tapi jangan ubah polanya
             + 'END:VCARD' // jangan di ubah
 prefix = '#'
 blocked = []   
