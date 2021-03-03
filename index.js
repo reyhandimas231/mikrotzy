@@ -750,6 +750,8 @@ client.on('group-participants-update', async (anu) => {
 					break
 					
 					case 'shadowtext':
+					case 'shadowstext:
+					case 'st':
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
 					if (args.length < 1) return reply('teksnya mana kak?')
@@ -992,11 +994,9 @@ client.on('group-participants-update', async (anu) => {
 				case 'loli':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					anu = await fetchJson(`https://api.vhtear.com/pinterest?query=loli&apikey=${apivhtear}`, {method: 'get'})
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/randomloli?apikey=${TobzKey}`, {method: 'get'})
 					reply(ind.wait())
-					var lol = JSON.parse(JSON.stringify(anu.result));
-					var i2 =  lol[Math.floor(Math.random() * lol.length)];
-					nyeee = await getBuffer(i2)
+					nyeee = await getBuffer(anu.result)
 					client.sendMessage(from, nyeee, image, { caption: 'Oni chan baka!! >:(', quoted: mek })
 					await limitAdd(sender)
 					break
@@ -2598,12 +2598,16 @@ client.on('group-participants-update', async (anu) => {
 					})
 					await limitAdd(sender)
 					break
-                			 case 'simi':
-					if (args.length < 1) return reply('Textnya mana um?')
-					teks = body.slice(5)
-					anu = await simih(teks) 
-					reply(anu)
-				break 
+                			case 'simi':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					teks = body.slice(6)
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/simsimi?text=${teks}&apikey=${tobzapi}`)
+					simii = `${anu.result}`
+					client.sendMessage(from, simii, text, {quoted: mek})
+					await limitAdd(sender)
+					break
+					
 				case 'simih':
 					if (!isGroup) return reply(ind.groupo())
 					if (!isGroupAdmins) return reply(ind.admin())
