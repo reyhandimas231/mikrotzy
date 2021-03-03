@@ -908,6 +908,17 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break 
 					
+					case 'jadwalsholat':
+					if (isLimit(sender)) return reply(ind.limitend(pushname))
+					if (!isRegistered) return reply(ind.noregis())	
+					reply(ind.wait)
+		 			jadwal = `${body.slice(14)}`
+					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/jadwalshalat?q=${jadwal}&apikey=${TobzKey}`, {method: 'get'})
+					js = `*${anu.result.imsak}*\n*${anu.result.subuh}*\n*${anu.result.sunrise}*\n*${anu.result.dzuhur}*\n*${anu.result.ashar}*\n*${anu.result.sunset}*\n*${anu.result.maghrib}*\n*${anu.result.isha}*\n*${anu.result.midnight}*\n*${anu.result.}*`
+					client.sendMessage(from, js, text, {quoted: mek})
+					await limitAdd(sender)
+					break
+					
 					case 'wpteknologi':
 					if (!isRegistered) return reply(ind.noregis())
 					if (isLimit(sender)) return reply(ind.limitend(pusname))
@@ -919,6 +930,19 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, wp, image, { quoted: mek })
 					await limitAdd(sender)
 					break 
+					
+					case 'babi':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					membr = []
+					const mes = groupMembers
+					const msk = groupMembers
+					const siaps = mes[Math.floor(Math.random() * mes.length)]
+					const sips = pushname[Math.floor(Math.random() * msk.length)]
+					teks = `*Yang Paling Babi Disini Adalah :* @${siaps.jid.split('@')[0]}`
+					membr.push(siaps.jid)
+					mentions(teks, membr, true)
+					break
 					
 					case 'wpprogram':
 					if (!isRegistered) return reply(ind.noregis())
@@ -1752,10 +1776,11 @@ client.on('group-participants-update', async (anu) => {
 					case 'ingfokan':
 					me = client.user
 					uptime = process.uptime()
-					teks = `*Nama bot* : ${me.name}\n*OWNER* : *MiKako*\n*AUTHOR* : Taufik-Kun\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
+					teks = `*Nama bot* : ${me.name}\n*OWNER* : *RAYHAN DIMAS*\n*AUTHOR* : RAYHAN Official\n*Nomor Bot* : @${me.jid.split('@')[0]}\n*Prefix* : ${prefix}\n*Total Block Contact* : ${blocked.length}\n*The bot is active on* : ${kyun(uptime)}`
 					buffer = await getBuffer(me.imgUrl)
 					client.sendMessage(from, buffer, image, {caption: teks, contextInfo:{mentionedJid: [me.jid]}})
 					break
+					
 				case 'blocklist': 
 					teks = '𝗕𝗟𝗢𝗖𝗞 𝗟𝗜𝗦𝗧 :\n'
 					for (let block of blocked) {
