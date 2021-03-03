@@ -652,6 +652,15 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender) 
 					break  
 					
+					case'harypotter':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limiten(pusname))
+					ngonsol = `${body.slice(12)}`
+					res = await getBuffer(`https://videfikri.com/api/textmaker/hpotter/?text=${ngonsol}`, {method: 'get'})
+					reply(ind.wait)
+					client.sendMessage(from, res, image, {quoted: mek})
+					break
+					
 					case 'cpubg':
 					case 'pubg':
 					if (!isRegistered) return reply(ind.noregis())
@@ -886,20 +895,44 @@ client.on('group-participants-update', async (anu) => {
 					}
 					break 
 					
-				case 'pinterest': 
-				if (!isRegistered) return reply(ind.noregis())
-				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					if (args.length < 1) return reply('Mau Nyari Foto Apa???')
-					pinte = body.slice(11)
-					anu = await fetchJson(`https://api.vhtear.com/pinterest?query=${pinte}&apikey=${apivhtear}`, {method: 'get'})
+					case 'pinterest':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					client.updatePresence(from, Presence.composing) 
+					data = await fetchJson(`https://api.fdci.se/rep.php?gambar=${body.slice(11)}`, {method: 'get'})
 					reply(ind.wait())
-					var pin = JSON.parse(JSON.stringify(anu.result));
-					var trest =  pin[Math.floor(Math.random() * pin.length)];
-					pinehg = await getBuffer(trest)
-					client.sendMessage(from, pinehg, image, { caption: '*Pinterest*\n\n*Hasil Pencarian : '+pinte+'*', quoted: mek })
-					await limitAdd(sender) 
+					n = JSON.parse(JSON.stringify(data));
+					nimek =  n[Math.floor(Math.random() * n.length)];
+					pok = await getBuffer(nimek)
+					client.sendMessage(from, pok, image, { quoted: mek, caption: `*PINTEREST*\n\n_KeyWord:_ ${body.slice(11)}`})
+					await limitAdd(sender)
 					break 
 					
+					case 'wpteknologi':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/wallpaper/programming?apikey=onlyonedeveloper`, {method: 'get'})
+					reply(ind.wait())
+					tekno = JSON.parse(JSON.stringify(anu.result));
+					logi =  tekno[Math.floor(Math.random() * tekno.length)];
+					wp = await getBuffer(logi)
+					client.sendMessage(from, wp, image, { quoted: mek })
+					await limitAdd(sender)
+					break 
+					
+					case 'wpprogram':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/wallpaper/programming?apikey=onlyonedeveloper`, {method: 'get'})
+					reply(ind.wait())
+					pro = JSON.parse(JSON.stringify(anu.result));
+					gram =  pro[Math.floor(Math.random() * pro.length)];
+					wp = await getBuffer(gram)
+					client.sendMessage(from, wp, image, { quoted: mek })
+					await limitAdd(sender)
+					break 
+					
+				
 	/*<==========================================[ANIME MENU]==============================================>*/
 				case 'husbu':
 				if (!isRegistered) return reply(ind.noregis())
@@ -911,6 +944,17 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, image, {quoted: mek, caption: '>_<'})
 					await limitAdd(sender)
 					break
+					
+					case 'waifu':
+				if (!isRegistered) return reply(ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pusname))
+				anu = await fetchJson(`https://onlydevcity.herokuapp.com/api/nsfw/waifu?apikey=onlyonedeveloper`, {method: 'get'})
+					reply(ind.wait)
+					buffer = await getBuffer(anu.result.url)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '>_<'})
+					await limitAdd(sender)
+					break
+					
 				case 'loli':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
@@ -931,7 +975,19 @@ client.on('group-participants-update', async (anu) => {
 					buffer = await getBuffer(anu.result.result)
 					client.sendMessage(from, buffer, image, { caption: 'kyaa >_< o... onii - chan >///<', quoted: mek})
 					await limitAdd(sender)
-					break		
+					break	
+					
+					case 'shota':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					ntah = body.slice(7)
+					img = await fetchJson(`https://tobz-api.herokuapp.com/api/randomshota?apikey=${TobzKey}`, {method: 'get'})
+					reply(ind.wait)
+					buffer = await getBuffer(img.result)
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: '😒'})
+					await limitAdd(sender)
+					break
+					
 				case 'nekonime':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
@@ -962,6 +1018,17 @@ client.on('group-participants-update', async (anu) => {
 					client.sendMessage(from, buffer, image, {quoted: mek})
 					await limitAdd(sender)
 					break
+					
+					case 'yuri':
+				if (!isRegistered) return reply(ind.noregis())
+				if (isLimit(sender)) return reply(ind.limitend(pushname))
+				if (!isNsfw) return reply(ind.nsfwoff())
+				res = await fetchJson(`https://onlydevcity.herokuapp.com/api/nsfw/yuri?apikey=onlyonedeveloper`, {method: 'get'})
+				buffer = await getBuffer(res.result.url)
+				client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Yurification🤤'})
+				await limitAdd(sender) 
+				break 
+					
 				case 'nsfwloli':
 				try {   
 				if (!isRegistered) return reply(ind.noregis())
@@ -1213,6 +1280,7 @@ client.on('group-participants-update', async (anu) => {
                    client.sendMessage(from, buff, image, {quoted: mek, caption: resep})
                    await limitAdd(sender) 
                    break 
+					
 		case 'quran':
 		if (!isRegistered) return reply(ind.noregis())
            	if (isLimit(sender)) return reply(ind.limitend(pusname))
@@ -1221,6 +1289,16 @@ client.on('group-participants-update', async (anu) => {
 			client.sendMessage(from, quran, text, {quoted: mek})
 			await limitAdd(sender) 
 			break 
+		
+		case 'kisahnabi':
+		if (!isRegistered) return reply(ind.noregis())
+           	if (isLimit(sender)) return reply(ind.limitend(pusname))
+		kisah = `${body.slice(11)}`
+		nabi = await fetchJson(`https://onlydevcity.herokuapp.com/api/kisahnabi?nabi=${kissah}&apikey=onlyonedeveloper`, {method: 'get'})
+		hasil = `*Nabi: ${nabi.nabi.nabi}\nTahun Lahir: ${nabi.nabi.lahir}\nUmur: ${nabi.nabi.umur}\nTempat: ${nabi.nabi.tempat}*\n\n*Kisah: *${nabi.nabi.kisah}`
+		client.sendMessage(from, hasil, text)
+		await limitAdd(sender)
+		break
 				
 		case 'randomKPOP':
 		case 'randomkpop':
@@ -1418,6 +1496,19 @@ client.on('group-participants-update', async (anu) => {
 					})
 					await limitAdd(sender)
 					break
+					
+					case 'babi':
+					if (!isRegistered) return reply(ind.noregis())
+					if (isLimit(sender)) return reply(ind.limitend(pusname))
+					membr = []
+					const mes = groupMembers
+					const msk = groupMembers
+					const siaps = mes[Math.floor(Math.random() * mes.length)]
+					const sips = pushname[Math.floor(Math.random() * msk.length)]
+					teks = `*Yang Paling Babi Disini Adalah :* @${siaps.jid.split('@')[0]}`
+					membr.push(siaps.jid)
+					mentions(teks, membr, true)
+					break
 	
 			case 'pasangan':
 			if (!isRegistered) return reply(ind.noregis())
@@ -1577,8 +1668,8 @@ client.on('group-participants-update', async (anu) => {
 				case 'tebakin':
 				if (!isRegistered) return reply(ind.noregis())
 				if (isLimit(sender)) return reply(ind.limitend(pusname))
-					anu = await fetchJson(`https://api.vhtear.com/tebakgambar&apikey=${apivhtear}`, {method: 'get'})
-					ngebuff = await getBuffer(anu.result.soalImg)
+					anu = await fetchJson(`https://videfikri.com/api/tebakgambar/`, {method: 'get'})
+					ngebuff = await getBuffer(anu.result.soal_gbr)
 					tebak = `➸ Jawaban : *${anu.result.jawaban}*`
 					setTimeout( () => {
 					client.sendMessage(from, tebak, text, {quoted: mek})
@@ -1845,32 +1936,33 @@ client.on('group-participants-update', async (anu) => {
                 if (isLimit(sender)) return reply(ind.limitend(pusname))
 					if (args.length < 1) return reply('Urlnya mana gan?')
 					if (!isUrl(args[0]) && !args[0].includes('youtu.be')) return reply(ind.error.Iv)
-					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${apivhtear}`, {method: 'get'})
+					anu = await fetchJson(`https://videfikri.com/api/ytmp4/?url=${body.slice(6)}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${anu.result.title}*\n• *Size:* ${anu.result.size}\n• *Link:* https://www.youtu.be/${anu.result.id}\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
-					buff = await getBuffer(anu.result.imgUrl)
+					ytt = `「 *YOUTUBE MP4 DOWNLOADER* 」\n\n• Title : *${anu.result.judul}*\n• *Link:* https://www.youtu.be/${anu.result.id}\n\n Tunggu Sebentar 1 menit Mungkin Agak Lama Karna Mendownload Video`
+					buffing = await getBuffer(anu.result.imgUrl)
 					reply(ind.wait)
-					buffer = await getBuffer(anu.result.UrlVideo)
-					client.sendMessage(from, buff, image, {quoted: mek, caption: ytt})
+					buffer = await getBuffer(anu.result.urlVideo)
+					client.sendMessage(from, buffing, image, {quoted: mek, caption: ytt})
 					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.result.title}.mp4`, quoted: mek, caption: 'Nih Anjim'})
 					await limitAdd(sender) 
 					break 
 
-				case 'ytmp3':
+					case 'ytmp3':
 					if (!isRegistered) return reply(ind.noregis())
                 			if (isLimit(sender)) return reply(ind.limitend(pusname))
 					if (args.length < 1) return reply('Urlnya mana gan?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(ind.error.Iv)
-					anu = await fetchJson(`https://api.vhtear.com/ytdl?link=${args[0]}&apikey=${apivhtear}`, {method: 'get'})
+					anu = await fetchJson(`https://videfikri.com/api/ytmp3/?url=${body.slice(7)}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
-					yta = `╭─「 *YOUTUBE MP3 DOWNLOADER* 」\n│\n│• *Title:* ${anu.result.title}\n│• *Size:* ${anu.result.size}\n│• *Link:* https://www.youtu.be/${anu.result.id}\n│\n│ Tunggu Sebentar 1 menit Mungkin Agak Lama │ Karna Mendownload Video\n╰─────────────────────`
-					buff = await getBuffer(anu.result.imgUrl)
-					reply(mess.wait)
-					buffer = await getBuffer(anu.result.UrlMp3)
-					client.sendMessage(from, buff, image, {quoted: mek, caption: yta})
-					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: mek, caption: 'Nih Gan'})
+					yta = `╭─「 *YOUTUBE MP3 DOWNLOADER* 」\n│\n│• *Title:* ${anu.result.judul}\n│• *Size:* ${anu.result.size}\n│• *Link:* https://www.youtu.be/${anu.result.id}\n│\n│ Tunggu Sebentar 1 menit Mungkin Agak Lama │ Karna Mendownload Video\n╰─────────────────────`
+					buffing = await getBuffer(anu.result.thumbnail)
+					reply(ind.wait)
+					buffer = await getBuffer(anu.result.url)
+					client.sendMessage(from, buffing, image, {quoted: mek, caption: yta})
+					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.result.judul}.mp3`, quoted: mek, caption: 'Nih Gan'})
 					await limitAdd(sender) 
 					break 
+					
 				case 'lirik':    
                			if (!isRegistered) return reply(ind.noregis())
               			if (isLimit(sender)) return reply(ind.limitend(pusname))
@@ -1880,6 +1972,7 @@ client.on('group-participants-update', async (anu) => {
 					reply('Lirik dari lagu '+teks+' adalah :\n\n'+anu.result.lirik)
 					await limitAdd(sender) 
 					break 
+					
 				case 'yutubdl':
 					if (args.length < 1) return reply('Urlnya mana um?')
 					if (!isRegistered) return reply(ind.noregis())
@@ -1897,13 +1990,13 @@ client.on('group-participants-update', async (anu) => {
 		if (!isRegistered) return reply(ind.noregis())
 		if (isLimit(sender)) return reply(ind.limitend(pusname)) 
                 reply(ind.wait())
-                anu = await fetchJson(`https://api.vhtear.com/ytmp3?query=${body.slice(6)}&apikey=${apivhtear}`)
+                anu = await fetchJson(`https://videfikri.com/api/ytplay/?query=${body.slice(6)}`, {method: 'get'})
                 if (anu.error) return reply(anu.error)
                 infomp3 = `*「❗」Lagu Ditemukan*\n➸ Judul : ${anu.result.title}\n➸ Durasi : ${anu.result.duration}\n➸ Size : ${anu.result.size}\n\n*[WAIT] Proses Dumlu Yakan*`
-                buffer = await getBuffer(anu.result.image)
-                lagu = await getBuffer(anu.result.mp3)
+                buffer = await getBuffer(anu.result.thumbnail)
+                ngebuff = await getBuffer(anu.result.url)
                 client.sendMessage(from, buffer, image, {quoted: mek, caption: infomp3})
-                client.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', quoted: mek})
+                client.sendMessage(from, ngebuff, audio, {mimetype: 'audio/mp4', quoted: mek})
                 break
 					
 		case 'film':
