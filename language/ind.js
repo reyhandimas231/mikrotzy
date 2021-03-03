@@ -152,6 +152,8 @@ Link Group bot:https://chat.whatsapp.com/DQx2UcGWJ1MAYTB4dZeZgk
 ╠☞ *${prefix}sticker* (jika video max. 9det)
 ╠☞ *${prefix}kuncitext*
 ╠☞ *${prefix}silktext*
+╠☞ *${prefix}wpteknologi*
+╠☞ *${prefix}wpprogram*
 ╠☞ *${prefix}makequote*
 ╠☞ *${prefix}hartatahta*
 ╠☞ *${prefix}toimg*
@@ -168,6 +170,8 @@ Link Group bot:https://chat.whatsapp.com/DQx2UcGWJ1MAYTB4dZeZgk
 ╠☞ *${prefix}apakah*
 ╠☞ *${prefix}seberapagay*
 ╠☞ *${prefix}rate*
+╠☞ *${prefix}fakta*
+╠☞ *${prefix}babi*
 ╠☞ *${prefix}truth*
 ╠☞ *${prefix}dare*
 ╠☞ *${prefix}hobby*
@@ -191,6 +195,7 @@ Link Group bot:https://chat.whatsapp.com/DQx2UcGWJ1MAYTB4dZeZgk
 ╠☞ *${prefix}wiki*
 ╠☞ *${prefix}nulis*
 ╠☞ *${prefix}quran*
+╠☞ *${prefix}kisahnabi*
 ╠☞ *${prefix}pantun*
 ╠☞ *${prefix}pinterest*
 ╠☞ *${prefix}tts*
@@ -208,8 +213,10 @@ Link Group bot:https://chat.whatsapp.com/DQx2UcGWJ1MAYTB4dZeZgk
 ║    
 ╠══─⊱ ❰ *DUNIA WIBU* ❱ ⊰─═══➤
 ╠☞ *${prefix}husbu*
+╠☞ *${prefix}waifu*
 ╠☞ *${prefix}loli*
 ╠☞ *${prefix}loli2*
+╠☞ *${prefix}shota*
 ╠☞ *${prefix}neko*
 ╠☞ *${prefix}nekopoi*
 ╠☞ *${prefix}nekonime*
@@ -219,6 +226,7 @@ Link Group bot:https://chat.whatsapp.com/DQx2UcGWJ1MAYTB4dZeZgk
 ╠☞ *${prefix}nsfwloli*
 ╠☞ *${prefix}nsfwneko*
 ╠☞ *${prefix}hentai*
+╠☞ *${prefix}yuri*
 ╠☞ *${prefix}animekiss*
 ║    
 ║───────⟪  cHARACTER ANIME ⟫───────
@@ -280,10 +288,9 @@ Link Group bot:https://chat.whatsapp.com/DQx2UcGWJ1MAYTB4dZeZgk
 ║
 ╠══─⊱ ❰ *THANGKS TO* ❱ ⊰─══➤
 ║
-╠☞ *Botol - LoL*
-╠☞ *Reyna*
-╠☞ *Damar*
-╠☞ *FEBRI*
+╠☞ *Taufik*
+╠☞ *Darmo Oficcial*
+╠☞ *Syarep - Kun*
 ╠☞ *RAYHAN*                                                                                                                                                   
 ╰════─⊱  ⸨ *REYHAN OFFICIAL* ⸩  ⊰─════╯
 `
