@@ -914,7 +914,7 @@ client.on('group-participants-update', async (anu) => {
 					reply(ind.wait)
 		 			jadwal = `${body.slice(14)}`
 					anu = await fetchJson(`https://tobz-api.herokuapp.com/api/jadwalshalat?q=${jadwal}&apikey=${TobzKey}`, {method: 'get'})
-					js = `*${anu.result.imsak}*\n*${anu.result.subuh}*\n*${anu.result.sunrise}*\n*${anu.result.dzuhur}*\n*${anu.result.ashar}*\n*${anu.result.sunset}*\n*${anu.result.maghrib}*\n*${anu.result.isha}*\n*${anu.result.midnight}*\n*${anu.result.}*`
+					js = `*${anu.result.imsak}*\n*${anu.result.subuh}*\n*${anu.result.sunrise}*\n*${anu.result.dzuhur}*\n*${anu.result.ashar}*\n*${anu.result.sunset}*\n*${anu.result.maghrib}*\n*${anu.result.isha}*\n*${anu.result.midnight}*`
 					client.sendMessage(from, js, text, {quoted: mek})
 					await limitAdd(sender)
 					break
@@ -1318,7 +1318,7 @@ client.on('group-participants-update', async (anu) => {
 		if (!isRegistered) return reply(ind.noregis())
            	if (isLimit(sender)) return reply(ind.limitend(pusname))
 		kisah = `${body.slice(11)}`
-		nabi = await fetchJson(`https://onlydevcity.herokuapp.com/api/kisahnabi?nabi=${kissah}&apikey=onlyonedeveloper`, {method: 'get'})
+		nabi = await fetchJson(`https://onlydevcity.herokuapp.com/api/kisahnabi?nabi=${kisah}&apikey=onlyonedeveloper`, {method: 'get'})
 		hasil = `*Nabi: ${nabi.nabi.nabi}\nTahun Lahir: ${nabi.nabi.lahir}\nUmur: ${nabi.nabi.umur}\nTempat: ${nabi.nabi.tempat}*\n\n*Kisah: *${nabi.nabi.kisah}`
 		client.sendMessage(from, hasil, text)
 		await limitAdd(sender)
@@ -1521,19 +1521,6 @@ client.on('group-participants-update', async (anu) => {
 					await limitAdd(sender)
 					break
 					
-					case 'babi':
-					if (!isRegistered) return reply(ind.noregis())
-					if (isLimit(sender)) return reply(ind.limitend(pusname))
-					membr = []
-					const mes = groupMembers
-					const msk = groupMembers
-					const siaps = mes[Math.floor(Math.random() * mes.length)]
-					const sips = pushname[Math.floor(Math.random() * msk.length)]
-					teks = `*Yang Paling Babi Disini Adalah :* @${siaps.jid.split('@')[0]}`
-					membr.push(siaps.jid)
-					mentions(teks, membr, true)
-					break
-	
 			case 'pasangan':
 			if (!isRegistered) return reply(ind.noregis())
            		if (isLimit(sender)) return reply(ind.limitend(pusname))
